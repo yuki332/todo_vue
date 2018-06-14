@@ -1,6 +1,6 @@
 const tab = {
 	template: `
-		<div v-show="isActive"><slot></slot></div>
+		<ul class="todo_list" v-show="isActive"><slot></slot></ul>
 	`,
 	props: {
 		name: { required: true },
@@ -18,12 +18,12 @@ const tab = {
 const tabs = {
 	template:`
 		<div>
-			<ul>
+			<ul class="todo_tabs">
 				<li v-for="tab in tabs"
 					:class="{ 'is-active' : tab.isActive }"
 					@click="selectTab(tab)"
 					>
-					<a href="#">{{ tab.name }}</a>
+					<button>{{ tab.name }}</button>
 				</li>
 			</ul>
 			<slot></slot>
@@ -48,18 +48,28 @@ const tabs = {
 }
 
 const header = {
-	template: '<h1>Task List</h1>'
+	template: '<h1 class="todo_header">Task List</h1>'
 }
 
 const task = {
 	template: `
-		<div>
+		<li class="todo_task">
 			<input type="checkbox" v-model="task.completed">
-			<span>{{ task.title }}</span>
-			<button @click="$emit('remove', task)">remove</button>
-		</div>
+			<label>{{ task.title }}</label>
+			<button @click="$emit('remove', task)">Remove</button>
+		</li>
 	`,
-	props: ['task']
+	props: ['task'],
+	data() {
+		return {
+			isActive: false
+		}
+	},
+	methods: {
+		mousePosition() {
+			this.isActive = this.isActive ? false : true;
+		}
+	}
 }
 
 const app = new Vue({

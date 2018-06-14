@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+body{
+	font-family: 'Raleway', sans-serif;
+	background: #f5f5f5;
+	width: 480px;
+	margin: 130px auto 0;
+}
+#app{
+	background: #ffff;
+}
+#app > section{
+	margin-bottom: 50px;
+	box-shadow: 0px 5px 5px 0px #f5f5f5;
+}
+.todo_header{
+	background: #f5f5f5;
+	color: #b5b5b5;
+	text-align: center;
+	padding-bottom: 15px;
+	margin-bottom: 0;
+}
+.todo_form{
+	display: flex;
+	box-shadow: 0px 1px 3px 0px #b5b5b5;
+}
+.todo_input{
+	color: #6a6a6a;
+	font-size: 36px;
+	border: none;
+	padding: .3em;
+	width: 80%;
+}
+.todo_input::placeholder{
+	color: #e5e5e5;
+}
+.todo_submit{
+	background: #ffffff;
+	width: 20%;
+	border: none;
+	box-shadow: -1px 0px 3px 0px #b5b5b5;
+}
+.todo_input:focus,
+.todo_submit:focus,
+.todo_tabs > li > button:focus,
+.todo_task > button {
+	outline: none;
+}
+.todo_tabs{
+	margin: 0;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding: 0;
+	padding-bottom: 20px;
+	list-style-type: none;
+	box-shadow: 0px 1px 3px 0px #f5f5f5;
+	display: flex;
+	justify-content:space-evenly;
+}
+.todo_tabs > li{
+	display: inline-block;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid #f5f5f5;
+}
+.todo_tabs > li:hover{
+	border: 1px solid #b5b5b5;
+}
+.todo_tabs > .is-active{
+	border: 1px solid #b5b5b5;
+}
+.todo_tabs > li > button{
+	border: none;
+	font-size: 24px;
+	color: 	#b5b5b5;
+	text-decoration: none;
+}
+.todo_list{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	height: 500px;
+	overflow: auto;
+}
+.todo_task{
+	font-family: 'Quicksand', sans-serif;
+	color: #666666;
+	margin: 0;
+	padding: 15px;
+	position: relative;
+	border-bottom: 1px solid #f5f5f5;
+}
+.todo_task > input{
+	margin-right: 15px;
+}
+.todo_task > button{
+	position: absolute;
+	top: 15px;
+	right:20px;
+	border: none;
+	background: #ff6666;
+	color: #ffffff;
+	padding: 3px 7px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.todo_task > button:hover{
+	background: #ff4c4c;
+}

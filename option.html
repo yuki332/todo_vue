@@ -4,40 +4,34 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-	<style>
-		a{
-			text-decoration: none;
-			color: inherit;
-		}
-		.is-active a{
-			color: blue;
-		}
-	</style>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div id="app">
 		<app-header></app-header>
-		<input type="text" v-model="newTask" @keyup.enter="addTask()">
-		<button @click="addTask()">Add</button>
+		<section>
+			<div class="todo_form">
+				<input class="todo_input" type="text" v-model="newTask" @keyup.enter="addTask()"
+					placeholder="what is task?">
+				<button class="todo_submit" @click="addTask()">Add</button>
+			</div>
 
-		<tabs :tasks="tasks">
-			<tab name="all" :selected="true">
-				<div v-for="item in tasks">
-					<task :task="item" @remove="remove($event)"></task>
-				</div>
-			</tab>
-			<tab name="completed">
-				<div v-for="item in completed">
-					<task :task="item" @remove="remove($event)"></task>
-				</div>
-			</tab>
-			<tab name="incomplete">
-				<div v-for="item in incomplete">
-					<task :task="item" @remove="remove($event)"></task>
-				</div>
-			</tab>
-		</tabs>
-
+			<tabs :tasks="tasks">
+				<tab name="all" :selected="true">
+					<task v-for="item in tasks" :task="item" @remove="remove($event)"></task>
+				</tab>
+				<tab name="completed">
+					<li v-for="item in completed">
+						<task :task="item" @remove="remove($event)"></task>
+					</li>
+				</tab>
+				<tab name="incomplete">
+					<li v-for="item in incomplete">
+						<task :task="item" @remove="remove($event)"></task>
+					</li>
+				</tab>
+			</tabs>
+		</section>
 	</div>
 	<script src="app.js"></script>
 </body>
