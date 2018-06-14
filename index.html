@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<style>
+		a{
+			text-decoration: none;
+			color: inherit;
+		}
+		.is-active a{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<app-header></app-header>
+		<input type="text" v-model="newTask" @keyup.enter="addTask()">
+		<button @click="addTask()">Add</button>
+		<div>
+			<button @click="selectTab('all')"><a href="#">all</a></button>
+			<button @click="selectTab('incomplete')"><a href="#">incomplete</a></button>
+			<button @click="selectTab('completed')"><a href="#">completed</a></button>
+		</div>
+
+		<div v-for="item in tasks" v-show="'all' === activeTab">
+			<task :task="item" @remove="remove($event)"></task>
+		</div>
+		<div v-for="item in incomplete" v-show="'incomplete' === activeTab">
+			<task :task="item" @remove="remove($event)"></task>
+		</div>
+		<div v-for="item in completed" v-show="'completed' === activeTab">
+			<task :task="item" @remove="remove($event)"></task>
+		</div>
+	</div>
+	<script>
+		const header = {
+			template: '<h1>Task List</h1>'
+		}
+
+		const task = {
+			template: `
+				<div>
+					<input type="checkbox" v-model="task.completed">
+					<span>{{ task.title }}</span>
+					<button @click="$emit('remove', task)">remove</button>
+				</div>
+			`,
+			props: ['task']
+		}
+
+		const app = new Vue({
+			el: '#app',
+			components: {
+				'task': task,
+				'app-header': header,
+				// 'tabs': tabs,
+				// 'tab': tab,
+			},
+			data: {
+				activeTab: 'all',
+				newTask: '',
+				tasks: [
+					{title: 'my task', completed: false},
+					{title: 'my task 2', completed: true},
+					{title: 'my task 3', completed: false},
+					{title: 'my task 4', completed: true},
+					{title: 'my task 5', completed: false},
+				]
+			},
+			computed: {
+				completed(){
+					const completed = [];
+					this.tasks.forEach(task => {
+						if(task.completed) completed.push(task);
+					});
+					return completed;
+				},
+				incomplete(){
+					const incomplete = [];
+					this.tasks.forEach(task => {
+						if(!task.completed) incomplete.push(task);
+					});
+					return incomplete;
+				}
+			},
+			methods: {
+				addTask(){
+					this.tasks.push({title: this.newTask, completed: false});
+					this.newTask = '';
+				},
+				remove(target){
+					this.tasks.splice(this.tasks.indexOf(target), 1);
+				},
+				selectTab(selectedTab){
+					this.activeTab = selectedTab;
+				}
+			}
+		})
+	</script>
+</body>
+</html>
