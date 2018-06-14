@@ -7,5 +7,5 @@
 `option.html`は`app.js`を参照します。
 コンポーネントの使い方が実践と同じかと。
 
-イメージ
+## イメージ
 ![Screenshot](screenshot.png)
