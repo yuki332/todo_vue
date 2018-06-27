@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<ul>
+		<!-- 出力をtitleだけにする -->
+		<li v-for="task in tasks">{{ task }}</li>
+		<!-- answer -->
+		<!-- <li v-for="task in tasks">{{ task.title }}</li> -->
+	</ul>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

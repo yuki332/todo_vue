@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<div id="app">
+		<section>
+			<div class="todo_form">
+				<input class="todo_input"
+					   type="text"
+					   v-model="newTask"
+					   @keyup.enter="addTask"
+					   placeholder="タスクは何ですか？">
+				<button class="todo_submit" @click="addTask">追加</button>
+			</div>
+			<div>
+				<ul class="todo_tabs">
+					<li :class="{'is-active': selectedTab('all')}"
+						@click="selectTab('all')">
+						<button>全て</button>
+					</li>
+					<li :class="{'is-active': selectedTab('completed')}"
+						@click="selectTab('completed')">
+						<button>完了</button>
+					</li>
+					<li :class="{'is-active': selectedTab('incomplete')}"
+						@click="selectTab('incomplete')">
+						<button>未完了</button>
+					</li>
+				</ul>
+			</div>
+			<ul class="todo_list" v-if="activeTab == 'all'">
+				<task-item v-for="item in tasks"
+						   :key="item.index"
+						   :task="item"
+						   @update="toggleStatus(item)"
+						   @remove="removeTask(item)">
+				</task-item>
+			</ul>
+			<ul class="todo_list" v-if="activeTab == 'completed'">
+				<task-item v-for="item in completed"
+						   :key="item.index"
+						   :task="item"
+						   @update="toggleStatus(item)"
+						   @remove="removeTask(item)">
+				</task-item>
+			</ul>
+			<ul class="todo_list" v-if="activeTab == 'incomplete'">
+				<task-item v-for="item in incomplete"
+						   :key="item.index"
+						   :task="item"
+						   @update="toggleStatus(item)"
+						   @remove="removeTask(item)">
+				</task-item>
+			</ul>
+
+		</section>
+	</div>
+	<script src="app.js"></script>
+</body>
+</html>

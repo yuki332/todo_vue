@@ -4,37 +4,46 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<link rel="stylesheet" href="style.css">
 	<style>
-		a{
+		div {
+			background: #ffff;
+			padding-top: 25px;
+			margin-bottom: 50px;
+			padding-bottom: 50px;
+			box-shadow: 0px 5px 5px 0px #b5b5b5;
+			text-align: center;
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
+		a {
+			margin-bottom: 15px;
+			border: 1px solid #dddddd;
+			border-radius: 5px;
+			box-shadow: 0px 3px 5px #d2d2d2;
+			padding: 1em;
+			width: 200px;
+			background-color: white;
 			text-decoration: none;
 			color: inherit;
-		}
-		.is-active a{
-			color: blue;
+			display: inline-block;
 		}
 	</style>
 </head>
 <body>
-	<div id="app">
-		<app-header></app-header>
-		<input type="text" v-model="newTask" @keyup.enter="addTask()">
-		<button @click="addTask()">Add</button>
-		<div>
-			<button @click="selectTab('all')"><a href="#">all</a></button>
-			<button @click="selectTab('incomplete')"><a href="#">incomplete</a></button>
-			<button @click="selectTab('completed')"><a href="#">completed</a></button>
-		</div>
-
-		<div v-for="item in tasks" v-show="'all' === activeTab">
-			<task :task="item" @remove="remove($event)"></task>
-		</div>
-		<div v-for="item in incomplete" v-show="'incomplete' === activeTab">
-			<task :task="item" @remove="remove($event)"></task>
-		</div>
-		<div v-for="item in completed" v-show="'completed' === activeTab">
-			<task :task="item" @remove="remove($event)"></task>
-		</div>
+	<div>
+		<h1>Vueレッスン</h1>
+		<ul>
+			<li><a href="./complete/index.html">完成物</a></li>
+			<li><a href="./lesson_one/index.html">レッスン１</a></li>
+			<li><a href="./lesson_two/index.html">レッスン２</a></li>
+			<li><a href="./lesson_three/index.html">レッスン３</a></li>
+		</ul>
 	</div>
-	<script src="./main.js"></script>
 </body>
 </html>

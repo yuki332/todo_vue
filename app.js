@@ -67,7 +67,7 @@ const task = {
 	},
 	methods: {
 		mousePosition() {
-			this.isActive = this.isActive ? false : true;
+			this.isActive = !this.isActive;
 		}
 	}
 }

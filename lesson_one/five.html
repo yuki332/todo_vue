@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<h1>page6</h1>
+<!-- v-ifの条件を変更し出力する -->
+<p v-if="false">ここは見れます</p>
+<!-- 両方のpタグにv-ifを追記する　条件：80以上表示 -->
+<p>よくできました</p>
+
+<!-- answer -->
+<!-- v-if="false"にして表示を隠す -->
+<!--
+<p v-if="true">ここは見れます</p>
+<p v-if="score >= 80">{{ message }}</p>
+-->
+
+</div>
+<script>
+	const app = new Vue({
+		el: '#app',
+		data: {
+			score: 83
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- style sheetを呼び出す -->
+	<link rel="stylesheet" href="app.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<ul>
+		<!-- buttonタグを</li>の前に入れる -->
+		<!-- v-on:clickを追記 -->
+		<li v-for="task in tasks"
+			v-bind:class="{'is-completed': task.completed}">
+			<button v-on:click="toggleCompletion(task)">
+				完了
+			</button>
+			{{ task.title }} | 完了: {{ task.completed }}
+		</li>
+		<!-- answer -->
+		<!-- <li v-for="task in tasks"
+			v-bind:class="{'is-completed': task.completed}">
+			<button v-on:click="toggleCompletion(task)">
+				完了
+			</button>
+			{{ task.title }} | 完了: {{ task.completed }}
+			<button v-on:click="remove(task)">削除</button>
+		</li> -->
+	</ul>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lesson one</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		{{ message }}
+	</div>
+<script>
+	const app = new Vue({
+		el: '#app',
+		data: {
+			// messageを変更して'Hello Vue!'と出力させる
+			message: 'Hello World'
+			// answer
+			// message: 'Hello Vue!'
+		}
+	})
+</script>
+</body>
+</html>

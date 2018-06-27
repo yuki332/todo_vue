@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<ul>
+		<!-- v-onディレクトリを追記、呼び出すメソッドはtoggleCompletion()、 -->
+		<!-- 引数はtaskとする -->
+		<li v-for="task in tasks" :key="task.index"><button>完了</button>{{ task.title }} | 完了: {{ task.completed }}</li>
+		<!-- answer -->
+		<!-- <li v-for="task in tasks"><button v-on:click="toggleCompletion(task)">
+			完了</button>{{ task.title }} | 完了: {{ task.completed }}
+		</li> -->
+	</ul>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

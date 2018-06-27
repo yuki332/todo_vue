@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<h1>page9</h1>
+	<div>
+		<!-- v-onを追記しメソッドを呼び出す -->
+		<button>スコアを直す</button>
+	</div>
+	<p>Score: {{ score }}</p>
+	<p v-if="score == 100">大変よくできました</p>
+	<p v-else-if="score >= 80">よくできました</p>
+	<p v-else>頑張りましょう</p>
+<!-- answer -->
+<!--
+<button v-on:click="changeScore">スコアを直す</button>
+ -->
+</div>
+<script>
+	const app = new Vue({
+		el: '#app',
+		data: {
+			score: 83
+		},
+		methods: {
+			// methodを追記する
+			// answer
+			// changeScore: function(){
+			// 	this.score = 100;
+			// }
+		}
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- style sheetを呼び出す -->
+	<link rel="stylesheet" href="app.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<!-- v-modelと出力のプロパティが同じであることを確認させる -->
+	<input type="text" v-model="userInput">
+	<p>{{ userInput }}</p>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

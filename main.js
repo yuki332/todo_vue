@@ -1,14 +1,14 @@
 const header = {
-	template: '<h1>Task List</h1>'
+	template: '<h1 class="todo_header">Task List</h1>'
 }
 
 const task = {
 	template: `
-		<div>
-			<input type="checkbox" v-model="task.completed">
+		<li :class="{'is-active':task.completed}">
+			<button @click="$emit('update')">Finish</button>
 			<span>{{ task.title }}</span>
-			<button @click="$emit('remove', task)">remove</button>
-		</div>
+			<button @click="$emit('remove')">remove</button>
+		</li>
 	`,
 	props: ['task']
 }
@@ -56,6 +56,9 @@ const app = new Vue({
 		},
 		selectTab(selectedTab){
 			this.activeTab = selectedTab;
+		},
+		updateComplete(item){
+			item.completed = !item.completed;
 		}
 	}
 })

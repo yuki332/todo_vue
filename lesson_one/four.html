@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<h1>page5</h1>
+	<!-- computedの関数greeding, fullMessageを出力する -->
+
+	<!-- answer -->
+	<!-- <p>{{ message }}</p>
+	<p>{{ fullMessage }}</p>
+	<p>{{ addition }}</p> -->
+</div>
+<script>
+	const app = new Vue({
+		el: '#app',
+		data: {
+			number: 5,
+			greeding: 'こんにちは',
+			name: 'わんこ'
+		},
+		computed:{
+			// ここに関数を書く
+			// answer
+			message: function(){
+				// return '忍者わんこ';
+			},
+			// addition: function(){
+			// 	return this.number + 4;
+			// },
+			// fullMessage: function(){
+			// 	return this.greeding + this.name + 'さん';
+			// }
+		}
+	})
+</script>
+</body>
+</html>
