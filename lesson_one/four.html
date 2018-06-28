@@ -3,40 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../lessons.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
+<h1>出力を変えてみよう</h1>
+<textarea rows="30" cols="80">
 <div id="app">
-	<h1>page5</h1>
-	<!-- computedの関数greeding, fullMessageを出力する -->
-
-	<!-- answer -->
-	<!-- <p>{{ message }}</p>
-	<p>{{ fullMessage }}</p>
-	<p>{{ addition }}</p> -->
+<!-- numberに4を足した数を出力してください -->
+<!-- 「こんにちはわんこさん」となるように出力してください。 -->
+<!-- answer -->
+<!-- {{ number + 4 }} -->
+<!-- {{ greeting + name + 'さん' }} -->
 </div>
 <script>
 	const app = new Vue({
 		el: '#app',
 		data: {
 			number: 5,
-			greeding: 'こんにちは',
+			greeting: 'こんにちは',
 			name: 'わんこ'
-		},
-		computed:{
-			// ここに関数を書く
-			// answer
-			message: function(){
-				// return '忍者わんこ';
-			},
-			// addition: function(){
-			// 	return this.number + 4;
-			// },
-			// fullMessage: function(){
-			// 	return this.greeding + this.name + 'さん';
-			// }
 		}
 	})
 </script>
+</textarea>
 </body>
 </html>

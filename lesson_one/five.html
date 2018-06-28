@@ -3,31 +3,34 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../lessons.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
+	<h1>computedプロパティ</h1>
+<textarea rows="30" cols="80">
 <div id="app">
-	<h1>page6</h1>
-<!-- v-ifの条件を変更し出力する -->
-<p v-if="false">ここは見れます</p>
-<!-- 両方のpタグにv-ifを追記する　条件：80以上表示 -->
-<p>よくできました</p>
-
-<!-- answer -->
-<!-- v-if="false"にして表示を隠す -->
-<!--
-<p v-if="true">ここは見れます</p>
-<p v-if="score >= 80">{{ message }}</p>
--->
-
+	<!-- computedの関数fullMessageを出力してください。 -->
+	<!-- answer -->
+	<!-- {{ fullMessage }} -->
 </div>
 <script>
 	const app = new Vue({
 		el: '#app',
 		data: {
-			score: 83
+			greeting: 'こんにちは',
+			name: 'わんこ'
+		},
+		computed:{
+			fullMessage: function(){
+				// greetingとnameを連結し返してください。
+				// answer
+				// return this.greeting + this.name + 'さん'
+			}
 		}
 	})
 </script>
+</textarea>
 </body>
 </html>

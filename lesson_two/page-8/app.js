@@ -2,7 +2,7 @@
 const app = new Vue({
 	el: '#app',
 	data: {
-		// 双方向データバインディング用のプロパティを追記
+		// newTaskを書き足してください。
 		// newTask: '',
 		tasks:[
 			{ title: '買い物', completed: false },

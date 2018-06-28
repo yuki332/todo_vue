@@ -3,8 +3,8 @@ const app = new Vue({
 	el: '#app',
 	data: {
 		tasks: ['買い物', '洗濯', '食器洗い', '宿題をする', '塾の課題をする']
-		// 配列の要素をオブジェクトに変更する
-		// タスク内容はtitleに入れ、completedで完了状態を管理する
+		// 配列の要素をオブジェクトに変更してください
+		// タスク内容はtitleに入れ、completedプロパティを追加してください。
 		// answer
 		// tasks:[
 		// 	{ title: '買い物', completed: false },

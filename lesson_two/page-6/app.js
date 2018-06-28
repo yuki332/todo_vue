@@ -14,9 +14,9 @@ const app = new Vue({
 		toggleCompletion: function(item){
 			item.completed = !item.completed
 		},
-		// removeメソッドを追記
-		// indexOfで該当タスクのインデックスを取得
-		// インデックスを使ってspliceで一つ要素を削除
+		// removeメソッドを作ってください
+		// indexOfで該当タスクのインデックスを取得し
+		// インデックスを使ってspliceで一つ要素を削除してください
 		// remove: function(item){
 		// 	const index = this.tasks.indexOf(item);
 		// 	this.tasks.splice(index, 1);

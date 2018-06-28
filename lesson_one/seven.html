@@ -3,29 +3,29 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../lessons.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
+<h1>条件分岐(2)</h1>
+<textarea rows="30" cols="80">
 <div id="app">
-	<h1>page8</h1>
-	<div>
-		<!-- v-onを追記する"score = 100"は準備 -->
-		<button v-on>スコアを直す</button>
-	</div>
-	<p>Score: {{ score }}</p>
+	<p v-if="false">ここは見れません</p>
+	<!-- v-elseを加えv-if="false"の場合のみ出力してください -->
+	<p>ここは見れます</p>
+	<!-- v-else-if、v-elseを加え、条件100未満80以上の場合に表示してください -->
+	<p v-if="score == 100">大変よくできました</p>
+
+	<!-- answer -->
+	<!--
+	<p v-if="false">ここは見れません</p>
+	<p v-else>ここは見れます</p>
+
 	<p v-if="score == 100">大変よくできました</p>
 	<p v-else-if="score >= 80">よくできました</p>
 	<p v-else>頑張りましょう</p>
-<!-- answer -->
-<!--
-	<div>
-		<button v-on:click="score = 100">fix score</button>
-	</div>
-	<p>Score: {{ score }}</p>
-	<p v-if="score == 100">大変よくできました</p>
-	<p v-else-if="score >= 80">よくできました</p>
-	<p v-else>頑張りましょう</p>
--->
+	-->
 </div>
 <script>
 	const app = new Vue({
@@ -35,5 +35,6 @@
 		}
 	})
 </script>
+</textarea>
 </body>
 </html>

@@ -3,15 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../../style.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
+	<h1>v-forで配列を出力してみよう</h1>
 <div id="app">
-	<ul>
-		<!-- v-forを使ってtasks内の要素を順番に出力する -->
-		<!-- v-for="変数 in プロパティ"の変数をtaskにする -->
-		<!-- 出力を{{ tasks }}から{{ task }}に変更する -->
-		<li>{{ tasks }}</li>
+	<ul class="todo_list">
+		<!-- v-forを使って配列を順番に出力してください -->
+		<li class="todo_task">{{ tasks }}</li>
+		<!-- answer -->
 		<!-- <li v-for="task in tasks">{{ task }}</li> -->
 	</ul>
 </div>

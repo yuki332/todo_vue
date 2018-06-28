@@ -3,25 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../lessons.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
+	<h1>Vue.jsで出力してみよう</h1>
+<textarea rows="30" cols="80">
 <div id="app">
-	<h1>page3</h1>
-<!-- {{ message }} を書いて出力する -->
-
-<!-- answer -->
-<!-- {{ message }} -->
+	{{ message }}
 </div>
 <script>
 	const app = new Vue({
 		el: '#app',
 		data: {
-			// ここにmessageプロパティを加える
+			message: 'Hello, World'
+			// 'Hello, World'を'Hello, Vue!'に書き換えてください
 			// answer
-			// message: 'こんにちはわんこ'
+			// message: 'Hello, Vue!'
 		}
 	})
 </script>
+</textarea>
 </body>
 </html>

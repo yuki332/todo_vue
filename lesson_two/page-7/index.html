@@ -4,13 +4,27 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<!-- style sheetを呼び出す -->
-	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="../../style.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<style>
+		#app{
+			padding: 15px;
+			height: 30vh;
+		}
+		#app > input{
+			display: block;
+			padding: 10px 20px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+	</style>
 </head>
 <body>
+	<h1>データバインディング</h1>
 <div id="app">
-	<!-- v-modelと出力のプロパティが同じであることを確認させる -->
+	<p>入力してください</p>
 	<input type="text" v-model="userInput">
+	<p>入力した値がここに表示されます</p>
 	<p>{{ userInput }}</p>
 </div>
 <script src="app.js"></script>

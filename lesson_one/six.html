@@ -3,25 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../lessons.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
+	<h1>条件分岐(1)</h1>
+<textarea rows="30" cols="80">
 <div id="app">
-	<h1>page7</h1>
-<!-- v-elseを追記しv-if="false"にする -->
-<p v-if="true">ここは見れます</p>
-<!-- 両方のpタグにv-else-if、v-elseを追記する　条件：100未満80以上表示 -->
-<p v-if="score == 100">大変よくできました</p>
+	<!-- v-ifの条件を変更し出力してください -->
+	<p v-if="false">ここは見れます</p>
+	<!-- プロパティscoreが80以上の場合表示するifディレクトリを書いてください -->
+	<p>よくできました</p>
 
-<!-- answer -->
-<!--
-<p v-if="false">ここは見れます</p>
-<p v-else>見れなくなります</p>
-
-<p v-if="score == 100">大変よくできました</p>
-<p v-else-if="score >= 80">よくできました</p>
-<p v-else>頑張りましょう</p>
--->
+	<!-- answer -->
+	<!-- <p v-if="true">ここは見れます</p> -->
+	<!-- <p v-if="score >= 80">よくできました</p> -->
 
 </div>
 <script>
@@ -32,5 +29,6 @@
 		}
 	})
 </script>
+</textarea>
 </body>
 </html>

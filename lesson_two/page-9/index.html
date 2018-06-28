@@ -3,24 +3,28 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<!-- style sheetを呼び出す -->
-	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="../../style.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
+<h1>配列に要素を追加してみよう</h1>
 <div id="app">
-	<input type="text" v-model="newTask">
-	<button v-on:click="addTask()">追加</button>
-	<ul>
-		<li v-for="task in tasks"
-			v-bind:class="{'is-completed': task.completed}">
-			<button v-on:click="toggleCompletion(task)">
-				完了
-			</button>
-			{{ task.title }} | 完了: {{ task.completed }}
-			<button v-on:click="remove(task)">削除</button>
-		</li>
-	</ul>
+	<section>
+		<div class="todo_form">
+			<input class="todo_input" type="text" placeholder="タスクは何ですか？" v-model="newTask">
+			<!-- buttonタグにv-onディレクトリをしようし要素を追加してください -->
+			<button class="todo_submit" @click="addTask">追加</button>
+		</div>
+		<ul class="todo_list">
+			<li class="todo_task" v-for="task in tasks">
+				<button class="button_status" v-bind:class="{ 'is-completed' : task.completed }" v-on:click="toggleCompletion(task)">
+					完了
+				</button>
+				{{ task.title }}
+				<button class="button_remove" v-on:click="remove(task)">削除</button>
+			</li>
+		</ul>
+	</section>
 </div>
 <script src="app.js"></script>
 </body>

@@ -24,7 +24,6 @@ const app = new Vue({
 			// completedはfalseに設定
 			// answer
 			// this.tasks.push({title: this.newTask, completed: false});
-
 			this.newTask = '';
 		}
 	}

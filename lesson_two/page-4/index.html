@@ -3,19 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="../../style.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
 <body>
+<h1>オブジェクトの値を操作しよう</h1>
 <div id="app">
-	<ul>
-		<!-- v-onディレクトリを追記、呼び出すメソッドはtoggleCompletion()、 -->
-		<!-- 引数はtaskとする -->
-		<li v-for="task in tasks" :key="task.index"><button>完了</button>{{ task.title }} | 完了: {{ task.completed }}</li>
-		<!-- answer -->
-		<!-- <li v-for="task in tasks"><button v-on:click="toggleCompletion(task)">
-			完了</button>{{ task.title }} | 完了: {{ task.completed }}
-		</li> -->
-	</ul>
+	<section>
+		<ul class="todo_list">
+			<!-- v-onを使ってbuttonタグがクリックされた時にメソッドを呼び出してください -->
+			<!-- 引数はtaskを渡してください -->
+			<li class="todo_task" v-for="task in tasks" :key="task.index"><button class="button_status">完了</button>{{ task.title }}, {{ task.completed }}</li>
+			<!-- answer -->
+			<!-- <li v-for="task in tasks"><button v-on:click="toggleStatus(task)">
+				完了</button>{{ task.title }} | 完了: {{ task.completed }}
+			</li> -->
+		</ul>
+	</section>
 </div>
 <script src="app.js"></script>
 </body>

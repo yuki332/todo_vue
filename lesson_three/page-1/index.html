@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<style>
+		.todo_list{
+			height: auto;
+		}
+		h2{
+			margin-left: 25px;
+		}
+	</style>
+</head>
+<body>
+	<h1>グループ分けしよう</h1>
+<div id="app">
+	<section>
+		<div class="todo_form">
+			<input class="todo_input" type="text" placeholder="タスクは何ですか？" v-model="newTask">
+			<button class="todo_submit" @click="addTask">追加</button>
+		</div>
+		<ul class="todo_list">
+			<li class="todo_task" v-for="task in tasks">
+				<button class="button_status" v-bind:class="{ 'is-completed' : task.completed }" v-on:click="toggleCompletion(task)">
+					完了
+				</button>
+				{{ task.title }}
+				<button class="button_remove" v-on:click="remove(task)">削除</button>
+			</li>
+		</ul>
+		<h2>完了済みタスク</h2>
+		<ul class="todo_list">
+			<!-- v-forでcompletedを表示してください -->
+			<li class="todo_task">task title</li>
+			<!-- <li class="todo_task" v-for="task in completed">{{ task.title }}</li> -->
+		</ul>
+		<h2>未完了タスク</h2>
+		<ul class="todo_list">
+			<!-- v-forでincompleteを表示してください -->
+			<li class="todo_task">task title</li>
+			<!-- <li class="todo_task" v-for="task in incomplete">{{ task.title }}</li> -->
+		</ul>
+	</section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

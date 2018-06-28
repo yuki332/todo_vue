@@ -15,8 +15,8 @@ const app = new Vue({
 	// パラメータはitemとし、completedはトグルできるよう設定
 	// answer
 	// methods: {
-	// 	toggleCompletion: function(item){
-	// 		item.completed = !item.completed
+	// 	toggleStatus: function(task){
+	// 		task.completed = !task.completed
 	// 	}
 	// }
 });
